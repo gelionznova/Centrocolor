@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    {% load static %}
+    {% load crispy_forms_tags %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | CentroColor</title>
+
+    <!-- librerias bootstrap -->
+    
+    <!-- estilos -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/interfaz.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">   
+
+</head>
+
+<body>
+  <nav id="nav-menu-container">
+    <ul class="nav-menu">
+      <li>
+        <a href="{% url 'Inicio' %}">inicio</a>
+      </li>
+      <li>
+        <a href="{% url 'registrarAlumno' %}">Formulario</a>
+      </li>          
+      <li>
+        <a href="{% url 'Contacto' %}">Contactanos</a>
+      </li>
+    </ul>
+  </nav>
+   
+    {% block content %}
+    
+    {% endblock %}
+    <br>
+    <footer id="footer">
+		<div class="container">
+			<div class="centrado">
+				<div class="col-md-12">
+					<div class="copyright">
+						&copy; Copyright <strong>CentroColor</strong>. Reservados todos los derechos
+					</div>
+					<div class="credits">
+				
+						Visita Nuestro Canal YouTube <a href="#">Centro Color</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/all-numbers.js' %}"></script>
+
+   
+    
+
+
+    <!-- <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-danger" type="submit">Search</button>
+    </form> -->
+
+   
+</body>
+</html>

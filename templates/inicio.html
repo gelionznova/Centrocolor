@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<br>
+<br>
+{% if mensaje %}
+<div class="alert alert-success" role="alert">Datos Registrados Exitosamente</div>
+{% endif %}
+<H1>TEMPLATE INICIO</H1>
+{% endblock %}

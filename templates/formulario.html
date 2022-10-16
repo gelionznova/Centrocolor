@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if form.errors %}
+<div class="alert alert-danger" role="alert">This is a danger alert-check it outl</div>
+{% endif %}
+
+<div class="container-login">
+	<div class="wrap-login">
+		<form name="form1" class="login-form validate-form" id="formLogin" action="{% url 'guardarAlumno' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+            <span class="login-form-title">REGISTRATE</span>
+            <br>
+            <div class="wrap-input100" data-validate = "Usuario incorrecto">                
+                {{form.nombre|as_crispy_field}}                
+                <span class="focus-efecto"></span>
+            </div>
+            <div class="wrap-input100" data-validate = "Usuario incorrecto">
+                {{form.apellido|as_crispy_field}}                
+                <span class="focus-efecto"></span>
+            </div>
+            <div name='text1' class="wrap-input100" data-validate = "Usuario incorrecto" placeholder="Usuario">
+                {{form.documento|as_crispy_field}}                
+                <span class="focus-efecto"></span>               
+            </div>
+            <div name='text1' class="wrap-input100" data-validate = "Usuario incorrecto" placeholder="Usuario">
+                {{form.genero|as_crispy_field}}                
+                <span class="focus-efecto"></span>               
+            </div>
+            <div class="wrap-input100" data-validate = "Usuario incorrecto">
+                {{form.tipo_de_rh|as_crispy_field}}                
+                <span class="focus-efecto"></span>
+            </div>
+            <div class="wrap-input100" data-validate="Password incorrecto">
+                {{form.empresa_universidad|as_crispy_field}}                
+                <span class="focus-efecto"></span>
+            </div>	
+            <div class="wrap-input100" data-validate = "Usuario incorrecto">
+                {{form.rol_de_usuario|as_crispy_field}}                
+                <span class="focus-efecto"></span>
+            </div>
+            <div class="wrap-input100" data-validate="Password incorrecto">
+                {{form.imagen_universi|as_crispy_field}}                
+                <span class="focus-efecto"></span>
+            </div>			
+            <div class="myButtonn">
+                <div class="center">
+                    <button class="btn">
+                        <svg width="290px" height="50px" viewBox="0 0 290 50" class="border">
+                            <polyline points="289,1 289,49 1,49 1,1 289,1" class="bg-line"/>
+                            <polyline points="289,1 289,49 1,49 1,1 289,1" class="hl-line"/>
+                        </svg>
+                        <span>
+                            REGISTRAR
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </form>            
+    </div>
+</div>
+
+<!-- <form action="{% url 'guardarAlumno' %}" method="POST" class="row g-3" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    {{form|crispy}}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form> -->
+
+
+{% endblock %}
